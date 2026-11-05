@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CarPricePredictor</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<nav>
+  <span class="logo"><span class="blue">D</span>riveValue</span>
+  <a href="/" class="{{ 'active' if page=='home' }}">Home</a>
+  <a href="/charts" class="{{ 'active' if page=='charts' }}">Charts</a>
+  <a href="/cars" class="{{ 'active' if page=='cars' }}">Browse Cars</a>
+  <a href="/predict" class="{{ 'active' if page=='predict' }}">Price Predictor</a>
+</nav>
+<div class="container">
+{% block content %}{% endblock %}
+</div>
+<footer>Built with Flask · pandas · numpy · matplotlib · seaborn</footer>
+</body>
+</html>

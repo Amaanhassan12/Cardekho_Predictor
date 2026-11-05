@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="hero">
+  <h1>Used Car Market Analysis</h1>
+  <p>Explore {{ stats.cars }} used cars from CarDekho: prices, brands, fuel types and more.</p>
+</div>
+<div class="cards">
+  <div class="card"><div class="num">{{ stats.cars }}</div><div class="lbl">Total cars</div></div>
+  <div class="card"><div class="num">{{ stats.brands }}</div><div class="lbl">Brands</div></div>
+  <div class="card"><div class="num">₹{{ stats.median }} L</div><div class="lbl">Median price</div></div>
+  <div class="card"><div class="num">{{ stats.top_brand }}</div><div class="lbl">Most listed brand</div></div>
+  <div class="card"><div class="num">{{ stats.priciest }}</div><div class="lbl">Priciest brand (avg)</div></div>
+  <div class="card"><div class="num">{{ stats.avg_age }} yrs</div><div class="lbl">Average age</div></div>
+</div>
+<div class="two">
+  <div class="box"><h3>Average price by fuel (lakh ₹)</h3>
+    <table>{% for k,v in fuel.items() %}<tr><td>{{ k }}</td><td><b>{{ v }}</b></td></tr>{% endfor %}</table></div>
+  <div class="box"><h3>Average price by transmission (lakh ₹)</h3>
+    <table>{% for k,v in trn.items() %}<tr><td>{{ k }}</td><td><b>{{ v }}</b></td></tr>{% endfor %}</table></div>
+</div>
+{% endblock %}

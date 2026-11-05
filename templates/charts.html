@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="boxed">Charts</h1></h1>
+<div class="chart-grid">
+{% for img, note in items %}
+  <div class="box"><img src="{{ url_for('static', filename='charts/' + img) }}" alt="{{ img }}"><p>{{ note }}</p></div>
+{% endfor %}
+</div>
+{% endblock %}
